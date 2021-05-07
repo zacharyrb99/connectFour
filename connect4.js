@@ -108,19 +108,15 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin()) {
-    setTimeout(function(){
       alert(`Player ${currPlayer} won!`);
-      location.reload();
-    }, 500);
+      setTimeout(function(){location.reload()},500);
   }
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
   if(board.every((row) => row.every((value) => value !== undefined))){
-      setTimeout(function(){
         alert(`It's a tie!`);
-        location.reload();
-      }, 500);
+        setTimeout(function(){location.reload()},500);
     }
 
   // switch players
@@ -156,7 +152,7 @@ function checkForWin() {
 
   for (var y = 0; y < HEIGHT; y++) {
     for (var x = 0; x < WIDTH; x++) {
-      var horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
+      var horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]]; 
       var vert = [[y, x], [y + 1, x], [y + 2, x], [y + 3, x]];
       var diagDR = [[y, x], [y + 1, x + 1], [y + 2, x + 2], [y + 3, x + 3]];
       var diagDL = [[y, x], [y + 1, x - 1], [y + 2, x - 2], [y + 3, x - 3]];
