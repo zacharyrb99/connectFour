@@ -89,7 +89,6 @@ function placeInTable(y, x) {
 /** handleClick: handle click of column top to play piece */
 function resetBoard(){
   location.reload();
-  return false;
 }
 
 function handleClick(evt) {
@@ -109,13 +108,19 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin()) {
-    setTimeout(function(){alert(`Player ${currPlayer} won!`)}, 500);
+    setTimeout(function(){
+      alert(`Player ${currPlayer} won!`);
+      location.reload();
+    }, 500);
   }
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
   if(board.every((row) => row.every((value) => value !== undefined))){
-      setTimeout(function(){alert(`It's a tie!`)}, 500);
+      setTimeout(function(){
+        alert(`It's a tie!`);
+        location.reload();
+      }, 500);
     }
 
   // switch players
