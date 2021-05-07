@@ -34,6 +34,9 @@ function makeBoard() {
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
   let htmlBoard = document.querySelector('#board');
+  
+  let resetButton = document.querySelector('#reset');
+  resetButton.addEventListener('click', resetBoard)
 
   // this makes the "top" of the board, the clickable part
   let top = document.createElement("tr");
@@ -84,6 +87,10 @@ function placeInTable(y, x) {
 }
 
 /** handleClick: handle click of column top to play piece */
+function resetBoard(){
+  location.reload();
+  return false;
+}
 
 function handleClick(evt) {
   // get x from ID of clicked cell

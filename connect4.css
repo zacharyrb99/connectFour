@@ -35,6 +35,10 @@ tr{
   border-radius: 30px;
 }
 
+button{
+  transform: translateX(92.5vh) translateY(50px);
+}
+
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
